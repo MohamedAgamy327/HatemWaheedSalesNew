@@ -9,8 +9,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using GalaSoft.MvvmLight.Command;
 using MahApps.Metro.Controls;
+using MahApps.Metro.IconPacks;
 using RootLibrary.WPF.Localization;
+using Sales.Helpers;
 using Sales.ViewModels.SafeViewModels;
 using Sales.Views.SafeViews;
 using System;
@@ -23,6 +26,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Ink;
 using System.Windows.Input;
+using System.Windows.Interactivity;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;

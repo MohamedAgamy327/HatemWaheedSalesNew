@@ -41,14 +41,6 @@ namespace Sales.Reports {
     /// </summary>
     public partial class ReportWindow : System.Windows.Window, System.Windows.Markup.IComponentConnector {
         
-        
-        #line 14 "..\..\..\Reports\ReportWindow.xaml"
-        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
-        internal SAPBusinessObjects.WPF.Viewer.CrystalReportsViewer crv;
-        
-        #line default
-        #line hidden
-        
         private bool _contentLoaded;
         
         /// <summary>
@@ -77,12 +69,6 @@ namespace Sales.Reports {
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Maintainability", "CA1502:AvoidExcessiveComplexity")]
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1800:DoNotCastUnnecessarily")]
         void System.Windows.Markup.IComponentConnector.Connect(int connectionId, object target) {
-            switch (connectionId)
-            {
-            case 1:
-            this.crv = ((SAPBusinessObjects.WPF.Viewer.CrystalReportsViewer)(target));
-            return;
-            }
             this._contentLoaded = true;
         }
     }

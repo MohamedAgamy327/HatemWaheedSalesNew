@@ -10,7 +10,9 @@
 //------------------------------------------------------------------------------
 
 using MahApps.Metro.Controls;
+using MahApps.Metro.IconPacks;
 using RootLibrary.WPF.Localization;
+using Sales.Helpers;
 using Sales.ViewModels.SupplyViewModels;
 using Sales.Views.SupplyViews;
 using System;
@@ -33,6 +35,7 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
+using WPFTextBoxAutoComplete;
 
 
 namespace Sales.Views.SupplyViews {

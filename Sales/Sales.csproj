@@ -647,9 +647,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SaleReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SaleReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReport21.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SupplyReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
