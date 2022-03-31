@@ -490,6 +490,7 @@ namespace Sales.ViewModels.SaleViewModels
                     ds.Sale[i]["ID"] = _saleID;
                     ds.Sale[i]["Date"] = _newSale.Date;
                     ds.Sale[i]["Client"] = _selectedClient.Name;
+                    ds.Sale[i]["ClientVatNumber"] = _selectedClient.VatNumber;
                     ds.Sale[i]["Serial"] = i + 1;
                     ds.Sale[i]["Category"] = item.Category + " " + item.Company;
                     ds.Sale[i]["Qty"] = item.Qty;
@@ -521,9 +522,16 @@ namespace Sales.ViewModels.SaleViewModels
                     rpt.crv.ViewerCore.ReportSource = saleRPT;
                     Mouse.OverrideCursor = null;
                 }
-                else
+                else if (parameter == "Location")
                 {
                     SaleReport2 saleRPT = new SaleReport2();
+                    saleRPT.SetDataSource(ds.Tables["Sale"]);
+                    rpt.crv.ViewerCore.ReportSource = saleRPT;
+                    Mouse.OverrideCursor = null;
+                }
+                else 
+                {
+                    SaleReport3 saleRPT = new SaleReport3();
                     saleRPT.SetDataSource(ds.Tables["Sale"]);
                     rpt.crv.ViewerCore.ReportSource = saleRPT;
                     Mouse.OverrideCursor = null;

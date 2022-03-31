@@ -35,6 +35,12 @@ namespace Sales.Models
             set { SetProperty(ref _address, value); }
         }
 
+        private string _vatNumber;
+        public string VatNumber
+        {
+            get { return _vatNumber; }
+            set { SetProperty(ref _vatNumber, value); }
+        }
 
         private decimal? _accountStart;
         public decimal? AccountStart

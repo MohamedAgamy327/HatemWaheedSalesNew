@@ -168,56 +168,70 @@ namespace Sales.ViewModels.SaleViewModels
         }
         private void PrintMethod(string parameter)
         {
-            Mouse.OverrideCursor = Cursors.Wait;
-            DS ds = new DS();
-            ds.Sale.Rows.Clear();
-            int i = 0;
-            foreach (var item in _saleCategories)
-            {
-                ds.Sale.Rows.Add();
-                ds.Sale[i]["ID"] = ID;
-                ds.Sale[i]["Date"] = _selectedSale.Date;
-                ds.Sale[i]["Client"] = _selectedSale.Client.Name;
-                ds.Sale[i]["Serial"] = i + 1;
-                ds.Sale[i]["Category"] = item.Category + " " + item.Company;
-                ds.Sale[i]["Qty"] = item.Qty;
-                ds.Sale[i]["Price"] = Math.Round(Convert.ToDecimal(item.Price), 2);
-                ds.Sale[i]["TotalPrice"] = Math.Round(Convert.ToDecimal(item.PriceTotal), 2);
-                ds.Sale[i]["BillPrice"] = _selectedSale.Price;
-                ds.Sale[i]["OldDebt"] = Math.Abs(Convert.ToDecimal(_selectedSale.OldDebt));
-                ds.Sale[i]["BillTotal"] = Math.Abs(Convert.ToDecimal(_selectedSale.PriceTotal));
-                ds.Sale[i]["Paid"] = _selectedSale.CashPaid;
-                ds.Sale[i]["DiscountPaid"] = _selectedSale.DiscountPaid;
-                ds.Sale[i]["NewDebt"] = Math.Abs(Convert.ToDecimal(_selectedSale.NewDebt));
-                if (_selectedSale.NewDebt > 0)
-                    ds.Sale[i]["Type"] = "له";
-                else if (_selectedSale.NewDebt < 0)
-                    ds.Sale[i]["Type"] = "عليه";
+            try {
+                Mouse.OverrideCursor = Cursors.Wait;
+                DS ds = new DS();
+                ds.Sale.Rows.Clear();
+                int i = 0;
+                foreach (var item in _saleCategories)
+                {
+                    ds.Sale.Rows.Add();
+                    ds.Sale[i]["ID"] = ID;
+                    ds.Sale[i]["Date"] = _selectedSale.Date;
+                    ds.Sale[i]["Client"] = _selectedSale.Client.Name;
+                    ds.Sale[i]["ClientVatNumber"] = _selectedSale.Client.VatNumber;
+                    ds.Sale[i]["Serial"] = i + 1;
+                    ds.Sale[i]["Category"] = item.Category + " " + item.Company;
+                    ds.Sale[i]["Qty"] = item.Qty;
+                    ds.Sale[i]["Price"] = Math.Round(Convert.ToDecimal(item.Price), 2);
+                    ds.Sale[i]["TotalPrice"] = Math.Round(Convert.ToDecimal(item.PriceTotal), 2);
+                    ds.Sale[i]["BillPrice"] = _selectedSale.Price;
+                    ds.Sale[i]["OldDebt"] = Math.Abs(Convert.ToDecimal(_selectedSale.OldDebt));
+                    ds.Sale[i]["BillTotal"] = Math.Abs(Convert.ToDecimal(_selectedSale.PriceTotal));
+                    ds.Sale[i]["Paid"] = _selectedSale.CashPaid;
+                    ds.Sale[i]["DiscountPaid"] = _selectedSale.DiscountPaid;
+                    ds.Sale[i]["NewDebt"] = Math.Abs(Convert.ToDecimal(_selectedSale.NewDebt));
+                    if (_selectedSale.NewDebt > 0)
+                        ds.Sale[i]["Type"] = "له";
+                    else if (_selectedSale.NewDebt < 0)
+                        ds.Sale[i]["Type"] = "عليه";
 
-                if (_selectedSale.OldDebt > 0)
-                    ds.Sale[i]["Type2"] = "له";
-                else if (_selectedSale.OldDebt < 0)
-                    ds.Sale[i]["Type2"] = "عليه";
-                i++;
+                    if (_selectedSale.OldDebt > 0)
+                        ds.Sale[i]["Type2"] = "له";
+                    else if (_selectedSale.OldDebt < 0)
+                        ds.Sale[i]["Type2"] = "عليه";
+                    i++;
+                }
+                ReportWindow rpt = new ReportWindow();
+                if (parameter == "Client")
+                {
+                    SaleReport saleRPT = new SaleReport();
+                    saleRPT.SetDataSource(ds.Tables["Sale"]);
+                    rpt.crv.ViewerCore.ReportSource = saleRPT;
+                    Mouse.OverrideCursor = null;
+                }
+                else if (parameter == "Location")
+                {
+                    SaleReport2 saleRPT = new SaleReport2();
+                    saleRPT.SetDataSource(ds.Tables["Sale"]);
+                    rpt.crv.ViewerCore.ReportSource = saleRPT;
+                    Mouse.OverrideCursor = null;
+                }
+                else
+                {
+                    SaleReport3 saleRPT = new SaleReport3();
+                    saleRPT.SetDataSource(ds.Tables["Sale"]);
+                    rpt.crv.ViewerCore.ReportSource = saleRPT;
+                    Mouse.OverrideCursor = null;
+                }
+                _currentWindow.Hide();
+                rpt.ShowDialog();
+                _currentWindow.ShowDialog();
             }
-            ReportWindow rpt = new ReportWindow();
-            if (parameter == "Client")
+            catch(Exception ex)
             {
-                SaleReport saleRPT = new SaleReport();
-                saleRPT.SetDataSource(ds.Tables["Sale"]);
-                rpt.crv.ViewerCore.ReportSource = saleRPT;
-                Mouse.OverrideCursor = null;
+                MessageBox.Show(ex.Message);
             }
-            else
-            {
-                SaleReport2 saleRPT = new SaleReport2();
-                saleRPT.SetDataSource(ds.Tables["Sale"]);
-                rpt.crv.ViewerCore.ReportSource = saleRPT;
-                Mouse.OverrideCursor = null;
-            }
-            _currentWindow.Hide();
-            rpt.ShowDialog();
-            _currentWindow.ShowDialog();
         }
 
         // Recalls

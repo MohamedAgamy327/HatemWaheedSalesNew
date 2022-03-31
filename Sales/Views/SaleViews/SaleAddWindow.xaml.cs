@@ -14,6 +14,15 @@ namespace Sales.Views.SaleViews
             btn1.Click += Btn1_Click;
             btn2.Click += Btn2_Click;
             btn3.Click += Btn3_Click;
+            btn4.Click += Btn4_Click;
+        }
+
+        private void Btn4_Click(object sender, RoutedEventArgs e)
+        {
+            Price.GetBindingExpression(NumericUpDown.ValueProperty).UpdateSource();
+            OldDebt.GetBindingExpression(NumericUpDown.ValueProperty).UpdateSource();
+            CashPaid.GetBindingExpression(NumericUpDown.ValueProperty).UpdateSource();
+            DiscountPaid.GetBindingExpression(NumericUpDown.ValueProperty).UpdateSource();
         }
 
         private void Btn3_Click(object sender, RoutedEventArgs e)

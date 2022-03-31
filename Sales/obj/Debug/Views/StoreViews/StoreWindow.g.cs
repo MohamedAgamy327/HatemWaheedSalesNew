@@ -9,12 +9,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using GalaSoft.MvvmLight.Command;
 using MahApps.Metro.Controls;
-using MahApps.Metro.Controls.Dialogs;
-using MahApps.Metro.IconPacks;
 using RootLibrary.WPF.Localization;
-using Sales.Helpers;
 using Sales.ViewModels.StoreViewModels;
 using Sales.Views.StoreViews;
 using System;
@@ -27,7 +23,6 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Ink;
 using System.Windows.Input;
-using System.Windows.Interactivity;
 using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -38,7 +33,6 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
-using WPFTextBoxAutoComplete;
 
 
 namespace Sales.Views.StoreViews {

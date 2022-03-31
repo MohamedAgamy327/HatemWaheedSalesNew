@@ -26,6 +26,8 @@
         <TextBox Name="First" Helpers:FocusExtension.IsFocused="{Binding IsFocused}"  Text="{Binding NewClient.Name, ValidatesOnNotifyDataErrors=True,UpdateSourceTrigger=PropertyChanged}" behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding NamesSuggestions}" Style="{StaticResource TextBoxStyle}"></TextBox>
         <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,5">التليفون</TextBlock>
         <TextBox   Text="{Binding NewClient.Telephone}" Style="{StaticResource TextBoxStyle}"></TextBox>
+        <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,5">الرقم الضريبى</TextBlock>
+        <TextBox   Text="{Binding NewClient.VatNumber}" Style="{StaticResource TextBoxStyle}"></TextBox>
         <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,5">العنوان</TextBlock>
         <TextBox   Text="{Binding NewClient.Address}" behaviors:AutoCompleteBehavior.AutoCompleteItemsSource="{Binding AddressSuggestions}" Style="{StaticResource TextBoxStyle}"></TextBox>
         <TextBlock Style="{StaticResource TextBlockStyle}" Margin="0,5">رصيد بداية المدة</TextBlock>

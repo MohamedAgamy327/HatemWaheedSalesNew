@@ -122,6 +122,13 @@
                 </StackPanel>
             </Button>
 
+            <Button  Margin="10,0" Height="30" Command="{Binding Print}" CommandParameter="Vat" FocusManager.FocusedElement="{Binding ElementName=First}" Style="{StaticResource SquareButtonStyle}" Width="180"    >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock  Text="طباعة ضريبية"  Style="{StaticResource TextBlockStyle}" Margin="10,0"></TextBlock>
+                    <iconPacks:PackIconFontAwesome Kind="Print"  />
+                </StackPanel>
+            </Button>
+
             <Controls:Badged Width="100"
                              Badge="{Binding RecallsQty}">
                 <Button Command="{Binding ShowRecall}"  Width="100" Height="30" Style="{StaticResource SquareButtonStyle}" >

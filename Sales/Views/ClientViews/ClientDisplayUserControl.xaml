@@ -86,6 +86,7 @@
                 <DataGrid.Columns>
                     <DataGridTextColumn IsReadOnly="True"  Header="العميل" Width="2*"  HeaderStyle="{StaticResource ColumnHeaderStyle}"   Binding="{Binding Name}" />
                     <DataGridTextColumn IsReadOnly="True"  Header="التليفون" Width="1*"  HeaderStyle="{StaticResource ColumnHeaderStyle}"   Binding="{Binding Telephone}" />
+                    <DataGridTextColumn IsReadOnly="True"  Header="الرقم الضريبى" Width="1*"  HeaderStyle="{StaticResource ColumnHeaderStyle}"   Binding="{Binding VatNumber}" />
                     <DataGridTextColumn IsReadOnly="True"  Header="العنوان" Width="2*"  HeaderStyle="{StaticResource ColumnHeaderStyle}"   Binding="{Binding Address}" />
                     <DataGridTextColumn IsReadOnly="True"  Header="رصيد بداية المدة" Width="1*"  HeaderStyle="{StaticResource ColumnHeaderStyle}"   Binding="{Binding AccountStart, StringFormat={}{0:0.00;(0.00)}}" />
                     

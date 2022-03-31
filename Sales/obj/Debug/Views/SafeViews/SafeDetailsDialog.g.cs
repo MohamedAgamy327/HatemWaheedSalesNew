@@ -9,11 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using MahApps.Metro.IconPacks;
 using RootLibrary.WPF.Localization;
-using Sales.Helpers;
 using System;
 using System.Diagnostics;
 using System.Windows;
@@ -34,7 +32,6 @@ using System.Windows.Media.TextFormatting;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Shell;
-using WPFTextBoxAutoComplete;
 
 
 namespace Sales.Views.SafeViews {

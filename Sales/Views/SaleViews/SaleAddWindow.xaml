@@ -236,6 +236,13 @@
                 </StackPanel>
             </Button>
 
+            <Button Name="btn4" Margin="10,0" Height="30" Command="{Binding Save}" CommandParameter="Vat" FocusManager.FocusedElement="{Binding ElementName=First}" Style="{StaticResource SquareButtonStyle}" Width="180"    >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock  Text="حفظ وطباعة ضريبية"  Style="{StaticResource TextBlockStyle}" Margin="10,0"></TextBlock>
+                    <iconPacks:PackIconModern Kind="Save" />
+                </StackPanel>
+            </Button>
+
             <TextBlock Margin="20,0,20,0" Style="{StaticResource TextBlockAddUpdateStyle}" Text="{Binding Report}"> 
 
     <i:Interaction.Triggers>
