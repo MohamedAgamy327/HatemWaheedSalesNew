@@ -435,7 +435,9 @@ namespace Sales.ViewModels.SaleViewModels
                 Mouse.OverrideCursor = Cursors.Wait;
                 DateTime _dt = DateTime.Now;
                 _newSale.RegistrationDate = _dt;
-                _newSale.Serial = _saleServ.GetNewSerial();
+
+                if (parameter == "Vat")
+                    _newSale.Serial = _saleServ.GetNewSerial();
                 _saleServ.AddSale(_newSale);
                 int _saleID = _saleServ.GetLastSaleID();
 

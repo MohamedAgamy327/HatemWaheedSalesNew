@@ -1213,3 +1213,7 @@ D:\Projects\HatemWaheedSalesNew\Sales\bin\Debug\CrystalDecisions.ReportAppServer
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Debug\FlashControlV71.dll
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Debug\Sales.csproj.AssemblyReference.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Debug\Sales.csproj.SuggestedBindingRedirects.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Debug\Sales.csproj.CoreCompileInputs.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Debug\Sales.csproj.CopyComplete

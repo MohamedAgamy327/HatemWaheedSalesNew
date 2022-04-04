@@ -74,7 +74,7 @@ namespace Sales.Services
         {
             using (SalesDB db = new SalesDB())
             {
-                return db.Sales.AsEnumerable().LastOrDefault().Serial + 1 ?? 1 ;
+                return db.Sales.AsEnumerable().Max(s=>s.Serial) + 1 ?? 1 ;
             }
         }
         public int GetSalesNumer(string key, DateTime dtFrom, DateTime dtTo)
