@@ -416,3 +416,7 @@ D:\Projects\HatemWaheedSalesNew\Sales\bin\Release\CrystalDecisions.ReportAppServ
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Release\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Release\FlashControlV71.dll
 D:\Projects\HatemWaheedSalesNew\Sales\bin\Release\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Release\Sales.csproj.AssemblyReference.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Release\Sales.csproj.SuggestedBindingRedirects.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Release\Sales.csproj.CoreCompileInputs.cache
+D:\Projects\HatemWaheedSalesNew\Sales\obj\Release\Sales.csproj.CopyComplete
