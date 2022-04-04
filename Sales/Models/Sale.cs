@@ -15,6 +15,13 @@ namespace Sales.Models
             set { SetProperty(ref _id, value); }
         }
 
+        private int? _serial;
+        public int? Serial
+        {
+            get { return _serial; }
+            set { SetProperty(ref _serial, value); }
+        }
+
         private int _clientID;
         public int ClientID
         {

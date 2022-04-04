@@ -164,6 +164,9 @@
     <Compile Include="Reports\RequiredCategoryReport.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\SaleReportVat.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\SaleReport.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -649,6 +652,10 @@
     <EmbeddedResource Include="Reports\RequiredCategoryReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RequiredCategoryReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\SaleReportVat.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>SaleReportVat1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\SaleReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

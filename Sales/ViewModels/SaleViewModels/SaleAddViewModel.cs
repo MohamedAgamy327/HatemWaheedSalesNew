@@ -435,6 +435,7 @@ namespace Sales.ViewModels.SaleViewModels
                 Mouse.OverrideCursor = Cursors.Wait;
                 DateTime _dt = DateTime.Now;
                 _newSale.RegistrationDate = _dt;
+                _newSale.Serial = _saleServ.GetNewSerial();
                 _saleServ.AddSale(_newSale);
                 int _saleID = _saleServ.GetLastSaleID();
 
@@ -488,6 +489,7 @@ namespace Sales.ViewModels.SaleViewModels
                 {
                     ds.Sale.Rows.Add();
                     ds.Sale[i]["ID"] = _saleID;
+                    ds.Sale[i]["SaleSerial"] = _newSale.Serial;
                     ds.Sale[i]["Date"] = _newSale.Date;
                     ds.Sale[i]["Client"] = _selectedClient.Name;
                     ds.Sale[i]["ClientVatNumber"] = _selectedClient.VatNumber;
@@ -496,7 +498,9 @@ namespace Sales.ViewModels.SaleViewModels
                     ds.Sale[i]["Qty"] = item.Qty;
                     ds.Sale[i]["Price"] = Math.Round(Convert.ToDecimal(item.Price), 2);
                     ds.Sale[i]["TotalPrice"] = Math.Round(Convert.ToDecimal(item.PriceTotal), 2);
-                    ds.Sale[i]["BillPrice"] = Math.Round(Convert.ToDecimal(_newSale.Price), 2); ;
+                    ds.Sale[i]["BillPrice"] = Math.Round(Convert.ToDecimal(_newSale.Price), 2);
+                    ds.Sale[i]["Vat"] = Math.Round(Convert.ToDecimal(((_newSale.Price * 14) / 100)), 2);
+                    ds.Sale[i]["PriceAfterVat"] = Math.Round(Convert.ToDecimal(_newSale.Price), 2) + Math.Round(Convert.ToDecimal(((_newSale.Price * 14) / 100)), 2);
                     ds.Sale[i]["OldDebt"] = Math.Abs(Convert.ToDecimal(_newSale.OldDebt));
                     ds.Sale[i]["BillTotal"] = Math.Abs(Math.Round(Convert.ToDecimal(_newSale.PriceTotal), 2));
                     ds.Sale[i]["Paid"] = _newSale.CashPaid;
@@ -529,9 +533,9 @@ namespace Sales.ViewModels.SaleViewModels
                     rpt.crv.ViewerCore.ReportSource = saleRPT;
                     Mouse.OverrideCursor = null;
                 }
-                else 
+                else
                 {
-                    SaleReport3 saleRPT = new SaleReport3();
+                    SaleReportVat saleRPT = new SaleReportVat();
                     saleRPT.SetDataSource(ds.Tables["Sale"]);
                     rpt.crv.ViewerCore.ReportSource = saleRPT;
                     Mouse.OverrideCursor = null;

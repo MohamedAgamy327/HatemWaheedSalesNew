@@ -177,6 +177,7 @@ namespace Sales.ViewModels.SaleViewModels
                 {
                     ds.Sale.Rows.Add();
                     ds.Sale[i]["ID"] = ID;
+                    ds.Sale[i]["SaleSerial"] = _selectedSale.Serial;
                     ds.Sale[i]["Date"] = _selectedSale.Date;
                     ds.Sale[i]["Client"] = _selectedSale.Client.Name;
                     ds.Sale[i]["ClientVatNumber"] = _selectedSale.Client.VatNumber;
@@ -186,6 +187,8 @@ namespace Sales.ViewModels.SaleViewModels
                     ds.Sale[i]["Price"] = Math.Round(Convert.ToDecimal(item.Price), 2);
                     ds.Sale[i]["TotalPrice"] = Math.Round(Convert.ToDecimal(item.PriceTotal), 2);
                     ds.Sale[i]["BillPrice"] = _selectedSale.Price;
+                    ds.Sale[i]["Vat"] = Math.Round(Convert.ToDecimal(((_selectedSale.Price * 14) / 100)), 2);
+                    ds.Sale[i]["PriceAfterVat"] = Math.Round(Convert.ToDecimal(_selectedSale.Price), 2) + Math.Round(Convert.ToDecimal(((_selectedSale.Price * 14) / 100)), 2);
                     ds.Sale[i]["OldDebt"] = Math.Abs(Convert.ToDecimal(_selectedSale.OldDebt));
                     ds.Sale[i]["BillTotal"] = Math.Abs(Convert.ToDecimal(_selectedSale.PriceTotal));
                     ds.Sale[i]["Paid"] = _selectedSale.CashPaid;
@@ -219,7 +222,7 @@ namespace Sales.ViewModels.SaleViewModels
                 }
                 else
                 {
-                    SaleReport3 saleRPT = new SaleReport3();
+                    SaleReportVat saleRPT = new SaleReportVat();
                     saleRPT.SetDataSource(ds.Tables["Sale"]);
                     rpt.crv.ViewerCore.ReportSource = saleRPT;
                     Mouse.OverrideCursor = null;

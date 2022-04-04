@@ -69,15 +69,14 @@ namespace Sales.Services
                 return db.Sales.AsEnumerable().LastOrDefault().ID;
             }
         }
-       
-        //public int GetSalesNumer(string key)
-        //{
-        //    using (SalesDB db = new SalesDB())
-        //    {
-        //        return db.Sales.Include(i => i.Client).Include(i => i.Salesperson).Where(w => (w.ID.ToString() + w.Client.Name + w.Salesperson.Name).Contains(key)).Count();
-        //    }
-        //}
 
+        public int? GetNewSerial()
+        {
+            using (SalesDB db = new SalesDB())
+            {
+                return db.Sales.AsEnumerable().LastOrDefault().Serial + 1 ?? 1 ;
+            }
+        }
         public int GetSalesNumer(string key, DateTime dtFrom, DateTime dtTo)
         {
             using (SalesDB db = new SalesDB())
@@ -85,14 +84,6 @@ namespace Sales.Services
                 return db.Sales.Include(i => i.Client).Include(i => i.Salesperson).Where(w => (w.ID.ToString() + w.Client.Name + w.Salesperson.Name).Contains(key) && w.Date >= dtFrom && w.Date <= dtTo).Count();
             }
         }
-
-        //public decimal? GetTotalTransportCost(int salespersonID, DateTime dtFrom, DateTime dtTo)
-        //{
-        //    using (SalesDB db = new SalesDB())
-        //    {
-        //        return db.Sales.Where(w => w.SalespersonID == salespersonID && w.Date >= dtFrom && w.Date <= dtTo).Sum(s => s.TransportCost);
-        //    }
-        //}
 
         public decimal? GetTotalBillPrice(int salespersonID, DateTime dtFrom, DateTime dtTo)
         {
@@ -141,14 +132,6 @@ namespace Sales.Services
                 return db.Sales.Include(i => i.Client).Include(i => i.Salesperson).SingleOrDefault(s => s.ID == id);
             }
         }
-
-        //public List<Sale> SearchSales(string key, int page)
-        //{
-        //    using (SalesDB db = new SalesDB())
-        //    {
-        //        return db.Sales.Include(i => i.Client).Include(i => i.Salesperson).Where(w => (w.ID.ToString() + w.Client.Name + w.Salesperson.Name).Contains(key)).OrderByDescending(o => o.RegistrationDate).Skip((page - 1) * 17).Take(17).Include(i=>i.SaleRecalls).ToList();
-        //    }
-        //}
 
         public List<Sale> SearchSales(string key, int page, DateTime dtFrom, DateTime dtTo)
         {
